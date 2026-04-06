@@ -8,15 +8,6 @@
     <script
       src="https://kit.fontawesome.com/2cdf354443.js"
       crossorigin="anonymous"></script>
-    <script src="index.js"></script>
-    <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav__links');
-
-    hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    });
-</script>
     <style media="all" id="fa-v4-font-face">
       /*!
  * Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com
@@ -78,13 +69,12 @@
       }
     </style>
   </head>
-  <body class="menu--open">
+  <body>
     <section id="landing">
       <nav>
-        <div class="row nav__row">
+        <div class="nav__container">
           <div class="nav__logo">
-            <img
-              class="nav__logo--img"
+            <img class="nav__logo--img"
               src="./assets/logo.2c489fc453a1783cbadacf914efa3df6.svg"
               alt="LOGO"/>
             <div class="nav__logo--title">Treact</div>
@@ -95,19 +85,26 @@
               <a href="#" class="nav__link">Pricing</a>
               <a href="#" class="nav__link">Contact Us</a>
               <a href="#" class="nav__link login">Login</a>
-              <a href="#" class="nav__link nav__link--primary nav__link::after">Sign Up</a>
-            </div>
-          <div class="menu">
-            <i class="fa-solid fa-bars" style="color: rgb(30, 52, 80);"></i>
-            <ul class="menu__links">
+              <a href="#" class="nav__link nav__link--primary">Sign Up</a>
+          </div>  
+            <button class="btn__menu">
+              <i class="fa-solid fa-bars menu__icon"></i>
+            </button>
+            <div class="menu__backdrop">
+              <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                <i class="fas fa-times" class="menu__backdrop--icon"></i>
+              </button>
+              <ul class="menu__links">
                 <li><a href="#about" class="menu__link" onclick="closeMenu()">About</a></li>
                 <li><a href="#blog" class="menu__link" onclick="closeMenu()">Blog</a></li>
                 <li><a href="#pricing" class="menu__link" onclick="closeMenu()">Pricing</a></li>
                 <li><a href="#contact" class="menu__link" onclick="closeMenu()">Contact Us</a></li>
                 <li><a href="#login" class="menu__link" onclick="closeMenu()">Login</a></li>
-                <li><a href="#signup" class="menu__link" onclick="closeMenu()">Sign up</a></li>
+                <li><a href="#signup" class="menu__link menu__link--primary" onclick="closeMenu()">Sign up</a></li>
             </ul>
+            </div>
           </div>
+          <div class="menu__overlay"></div>
         </div>
       </nav>
       <header>
@@ -628,5 +625,6 @@
         </div>
       </div>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
