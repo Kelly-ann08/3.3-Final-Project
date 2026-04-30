@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', () => {
+
   const openBtn = document.querySelector('.btn__menu');
   const closeBtn = document.querySelector('.btn__menu--close');
   const backdrop = document.querySelector('.menu__backdrop');
@@ -17,4 +19,4 @@
   closeBtn.addEventListener('click', closeMenu);
   overlay.addEventListener('click', closeMenu);
 
-
+});

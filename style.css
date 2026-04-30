@@ -173,11 +173,13 @@ svg:not(:root) {
 }
 
 .btn__menu {
+    position: fixed;
     background-color: transparent;
     font-size: 40px;
     text-align: center;
     border: none;
-    display: none;
+    display: block;
+    z-index: 1;
 }
 
 .btn__menu--close {
@@ -209,10 +211,11 @@ svg:not(:root) {
     left: 0;
     right: 0;
     bottom: 0;
-    max-width: 400px;
-    margin: 80px auto;
-    width: 100%;
-    height: auto;
+    max-width: 1280px;
+    margin: 20px auto;
+    width: 96%;
+    height: 500px;
+    overflow-y: hidden;
     padding: 40px 20px;
     background-color: #fff;
     border: 1px solid rgb(229, 231, 235);
@@ -221,8 +224,9 @@ svg:not(:root) {
     visibility: hidden;
     opacity: 0;
     transform: translateX(100%);
-    transition: transform 300ms ease;
+    transition: all 300ms ease;
     z-index: 4;
+    pointer-events: none;
 }
 
 ul {
@@ -233,6 +237,7 @@ ul {
     visibility: visible;
     opacity: 1;
     transform: translateX(0);
+    pointer-events: auto;
 }
 
 .menu__overlay {
@@ -244,13 +249,15 @@ ul {
   background: rgba(0,0,0,0.4);
   opacity: 0;
   visibility: hidden;
-  transition: 0.3s;
+  transition: all 0.3s;
   z-index: 3;
+  pointer-events: none;
 }
 
 .menu__overlay--open {
   opacity: 1;
   visibility: visible;
+  pointer-events: all;
 }
 
 .menu__links {
