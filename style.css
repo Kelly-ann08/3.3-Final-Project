@@ -173,7 +173,8 @@ svg:not(:root) {
 }
 
 .btn__menu {
-    position: fixed;
+    position: relative;
+    margin-top: -12px;
     background-color: transparent;
     font-size: 40px;
     text-align: center;
@@ -189,12 +190,9 @@ svg:not(:root) {
 }
 
 .menu__icon {
-    position: fixed;
     top: 32px;
     right: 20px;
     font-size: 24px;
-    font-weight: normal;
-    z-index: 2;
     cursor: pointer;
 }
 
@@ -1353,10 +1351,6 @@ footer {
         align-items: center;
     }
 
-    .nav__container {
-        flex-direction: column;
-    }
-
     .row {
         flex-direction: column;
         align-items: center;
@@ -1367,7 +1361,7 @@ footer {
     }
 
     .btn__menu {
-        display: block;
+        position: static;
     }
 
     .header__description--wrapper {
